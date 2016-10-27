@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Collections;
+using DevExpress.XtraReports.UI;
 
 namespace Clinic
 {
@@ -73,7 +74,8 @@ namespace Clinic
             {
                 if(XtraMessageBox.Show("Patient data updated!\nDo you want to print?", "Print Report?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    rptClinicReport rpt = new rptClinicReport();
+                    new rptClinicReport(sc.Count).ShowPreviewDialog();
+                    Close();
                 }
                 else
                 {

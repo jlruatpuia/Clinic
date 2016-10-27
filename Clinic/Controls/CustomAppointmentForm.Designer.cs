@@ -34,12 +34,12 @@ namespace Clinic.Controls
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.luePTN = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnPTN = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.dxVP = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.colPID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPNM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colADR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnPTN = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dxVP = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).BeginInit();
@@ -158,6 +158,7 @@ namespace Clinic.Controls
             conditionValidationRule1.ErrorText = "Please enter Patient Name";
             this.dxVP.SetValidationRule(this.luePTN, conditionValidationRule1);
             this.luePTN.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.luePTN_ButtonClick);
+            this.luePTN.EditValueChanged += new System.EventHandler(this.luePTN_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
@@ -169,23 +170,6 @@ namespace Clinic.Controls
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // btnPTN
-            // 
-            this.btnPTN.Location = new System.Drawing.Point(367, 348);
-            this.btnPTN.Name = "btnPTN";
-            this.btnPTN.Size = new System.Drawing.Size(75, 23);
-            this.btnPTN.TabIndex = 30;
-            this.btnPTN.Text = "Patient Data";
-            this.btnPTN.Click += new System.EventHandler(this.btnPTN_Click);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(16, 210);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(68, 13);
-            this.labelControl1.TabIndex = 31;
-            this.labelControl1.Text = "Patient Name:";
             // 
             // colPID
             // 
@@ -222,6 +206,23 @@ namespace Clinic.Controls
             this.colADR.Visible = true;
             this.colADR.VisibleIndex = 2;
             this.colADR.Width = 445;
+            // 
+            // btnPTN
+            // 
+            this.btnPTN.Location = new System.Drawing.Point(367, 348);
+            this.btnPTN.Name = "btnPTN";
+            this.btnPTN.Size = new System.Drawing.Size(75, 23);
+            this.btnPTN.TabIndex = 30;
+            this.btnPTN.Text = "Patient Data";
+            this.btnPTN.Click += new System.EventHandler(this.btnPTN_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(16, 210);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(68, 13);
+            this.labelControl1.TabIndex = 31;
+            this.labelControl1.Text = "Patient Name:";
             // 
             // CustomAppointmentForm
             // 

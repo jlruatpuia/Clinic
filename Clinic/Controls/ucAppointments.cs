@@ -30,6 +30,10 @@ namespace Clinic.Controls
             daRes.Fill(dsClinic.Resources);
             daApp.Fill(dsClinic.Appointments);
             daApp.Adapter.RowUpdated += new OleDbRowUpdatedEventHandler(daApp_RowUpdated);
+            if (Properties.Settings.Default.showDateNavigation == true)
+                dp.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+            else
+                dp.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
         }
 
         private void OnAppointmentModified(object sender, PersistentObjectsEventArgs e)
@@ -63,6 +67,33 @@ namespace Clinic.Controls
             {
                 form.Dispose();
             }
+        }
+
+        private void dp_Collapsed(object sender, DevExpress.XtraBars.Docking.DockPanelEventArgs e)
+        {
+            Properties.Settings.Default.showDateNavigation = false;
+            Properties.Settings.Default.Save();
+        }
+
+        private void dp_Expanded(object sender, DevExpress.XtraBars.Docking.DockPanelEventArgs e)
+        {
+            Properties.Settings.Default.showDateNavigation = true;
+            Properties.Settings.Default.Save();
+        }
+
+        private void sch_SelectionChanged(object sender, EventArgs e)
+        {
+            //Appointment selectedApt;
+            //if (this.sch.SelectedAppointments.Count == 1)
+            //{
+            //    selectedApt = this.sch.SelectedAppointments[0];
+            //    DataRowView row = (DataRowView)selectedApt.GetSourceObject(this.schStorage);
+            //    int id = Convert.ToInt32(row["UniqueID"]);
+            //    string pid = row["PatientID"].ToString();
+
+            //    XtraMessageBox.Show(id.ToString() + Environment.NewLine + pid);
+            //    return;
+            //}
         }
     }
 }

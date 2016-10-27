@@ -93,6 +93,12 @@
     <Compile Include="Controls\CustomAppointmentForm.Designer.cs">
       <DependentUpon>CustomAppointmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucDoctors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucDoctors.Designer.cs">
+      <DependentUpon>ucDoctors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucOverallView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="frmPatientDataUpdate.Designer.cs">
       <DependentUpon>frmPatientDataUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="MyClass.cs" />
     <Compile Include="Controls\ucAppointments.cs">
@@ -144,11 +156,38 @@
     <Compile Include="rptClinicReport.Designer.cs">
       <DependentUpon>rptClinicReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptOverall.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptOverall.Designer.cs">
+      <DependentUpon>rptOverall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPatientDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPatientDetail.Designer.cs">
+      <DependentUpon>rptPatientDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPatientList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPatientList.Designer.cs">
+      <DependentUpon>rptPatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPreview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPreview.Designer.cs">
+      <DependentUpon>rptPreview.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controls\CustomAppointmentForm.resx">
       <DependentUpon>CustomAppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucAppointments.resx">
       <DependentUpon>ucAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucDoctors.resx">
+      <DependentUpon>ucDoctors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucOverallView.resx">
       <DependentUpon>ucOverallView.cs</DependentUpon>
@@ -161,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPatientDataUpdate.resx">
       <DependentUpon>frmPatientDataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -178,6 +220,18 @@
     </Compile>
     <EmbeddedResource Include="rptClinicReport.resx">
       <DependentUpon>rptClinicReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptOverall.resx">
+      <DependentUpon>rptOverall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPatientDetail.resx">
+      <DependentUpon>rptPatientDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPatientList.resx">
+      <DependentUpon>rptPatientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPreview.resx">
+      <DependentUpon>rptPreview.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="dsClinic.xsc">
@@ -212,6 +266,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

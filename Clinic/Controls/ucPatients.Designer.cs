@@ -34,8 +34,22 @@
             this.bNew = new DevExpress.XtraBars.BarButtonItem();
             this.bEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bDel = new DevExpress.XtraBars.BarButtonItem();
+            this.bPrint = new DevExpress.XtraBars.BarSubItem();
+            this.bPrintPatientDetail = new DevExpress.XtraBars.BarButtonItem();
+            this.bPrintPatientList = new DevExpress.XtraBars.BarButtonItem();
+            this.bExport = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.bPD_PDF = new DevExpress.XtraBars.BarButtonItem();
+            this.bPD_XLS = new DevExpress.XtraBars.BarButtonItem();
+            this.bPD_XLSX = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.bPL_PDF = new DevExpress.XtraBars.BarButtonItem();
+            this.bPL_XLS = new DevExpress.XtraBars.BarButtonItem();
+            this.bPL_XLSX = new DevExpress.XtraBars.BarButtonItem();
+            this.bFind = new DevExpress.XtraBars.BarCheckItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.grd = new DevExpress.XtraGrid.GridControl();
             this.grv = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,6 +66,7 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lbAMT = new DevExpress.XtraEditors.LabelControl();
             this.lbMED = new DevExpress.XtraEditors.LabelControl();
             this.lbTMP = new DevExpress.XtraEditors.LabelControl();
             this.lbEXM = new DevExpress.XtraEditors.LabelControl();
@@ -73,14 +88,18 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bPrint = new DevExpress.XtraBars.BarSubItem();
-            this.bPrintPatientDetail = new DevExpress.XtraBars.BarButtonItem();
-            this.bPrintPatientList = new DevExpress.XtraBars.BarButtonItem();
-            this.bExport = new DevExpress.XtraBars.BarSubItem();
-            this.bExpPDF = new DevExpress.XtraBars.BarButtonItem();
-            this.bExpXLS = new DevExpress.XtraBars.BarButtonItem();
-            this.bExpXLSX = new DevExpress.XtraBars.BarButtonItem();
+            this.simpleLabelItem4 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patientDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patientListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grv)).BeginInit();
@@ -104,6 +123,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            this.cMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -118,11 +140,17 @@
             this.bPrintPatientDetail,
             this.bPrintPatientList,
             this.bExport,
-            this.bExpPDF,
-            this.bExpXLS,
-            this.bExpXLSX});
+            this.bPD_PDF,
+            this.bPD_XLS,
+            this.bPD_XLSX,
+            this.barSubItem1,
+            this.barSubItem2,
+            this.bPL_PDF,
+            this.bPL_XLS,
+            this.bPL_XLSX,
+            this.bFind});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -155,6 +183,126 @@
             this.bDel.Name = "bDel";
             this.bDel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bDel_ItemClick);
             // 
+            // bPrint
+            // 
+            this.bPrint.Caption = "&Print";
+            this.bPrint.Glyph = ((System.Drawing.Image)(resources.GetObject("bPrint.Glyph")));
+            this.bPrint.Id = 4;
+            this.bPrint.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPrint.LargeGlyph")));
+            this.bPrint.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPrintPatientDetail),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPrintPatientList)});
+            this.bPrint.Name = "bPrint";
+            // 
+            // bPrintPatientDetail
+            // 
+            this.bPrintPatientDetail.Caption = "Patient Detail";
+            this.bPrintPatientDetail.Id = 5;
+            this.bPrintPatientDetail.Name = "bPrintPatientDetail";
+            this.bPrintPatientDetail.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPrintPatientDetail_ItemClick);
+            // 
+            // bPrintPatientList
+            // 
+            this.bPrintPatientList.Caption = "Patient List";
+            this.bPrintPatientList.Id = 6;
+            this.bPrintPatientList.Name = "bPrintPatientList";
+            this.bPrintPatientList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPrintPatientList_ItemClick);
+            // 
+            // bExport
+            // 
+            this.bExport.Caption = "E&xport";
+            this.bExport.Glyph = ((System.Drawing.Image)(resources.GetObject("bExport.Glyph")));
+            this.bExport.Id = 7;
+            this.bExport.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bExport.LargeGlyph")));
+            this.bExport.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2)});
+            this.bExport.Name = "bExport";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Patient Detail";
+            this.barSubItem1.Id = 11;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPD_PDF),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPD_XLS),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPD_XLSX)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // bPD_PDF
+            // 
+            this.bPD_PDF.Caption = "To PDF";
+            this.bPD_PDF.Glyph = ((System.Drawing.Image)(resources.GetObject("bPD_PDF.Glyph")));
+            this.bPD_PDF.Id = 8;
+            this.bPD_PDF.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPD_PDF.LargeGlyph")));
+            this.bPD_PDF.Name = "bPD_PDF";
+            this.bPD_PDF.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPD_PDF_ItemClick);
+            // 
+            // bPD_XLS
+            // 
+            this.bPD_XLS.Caption = "To XLS";
+            this.bPD_XLS.Glyph = ((System.Drawing.Image)(resources.GetObject("bPD_XLS.Glyph")));
+            this.bPD_XLS.Id = 9;
+            this.bPD_XLS.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPD_XLS.LargeGlyph")));
+            this.bPD_XLS.Name = "bPD_XLS";
+            this.bPD_XLS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPD_XLS_ItemClick);
+            // 
+            // bPD_XLSX
+            // 
+            this.bPD_XLSX.Caption = "To XLSX";
+            this.bPD_XLSX.Glyph = ((System.Drawing.Image)(resources.GetObject("bPD_XLSX.Glyph")));
+            this.bPD_XLSX.Id = 10;
+            this.bPD_XLSX.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPD_XLSX.LargeGlyph")));
+            this.bPD_XLSX.Name = "bPD_XLSX";
+            this.bPD_XLSX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPD_XLSX_ItemClick);
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Patient List";
+            this.barSubItem2.Id = 13;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPL_PDF),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPL_XLS),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPL_XLSX)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // bPL_PDF
+            // 
+            this.bPL_PDF.Caption = "To PDF";
+            this.bPL_PDF.Glyph = ((System.Drawing.Image)(resources.GetObject("bPL_PDF.Glyph")));
+            this.bPL_PDF.Id = 14;
+            this.bPL_PDF.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPL_PDF.LargeGlyph")));
+            this.bPL_PDF.Name = "bPL_PDF";
+            this.bPL_PDF.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPL_PDF_ItemClick);
+            // 
+            // bPL_XLS
+            // 
+            this.bPL_XLS.Caption = "To XLS";
+            this.bPL_XLS.Glyph = ((System.Drawing.Image)(resources.GetObject("bPL_XLS.Glyph")));
+            this.bPL_XLS.Id = 15;
+            this.bPL_XLS.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPL_XLS.LargeGlyph")));
+            this.bPL_XLS.Name = "bPL_XLS";
+            this.bPL_XLS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPL_XLS_ItemClick);
+            // 
+            // bPL_XLSX
+            // 
+            this.bPL_XLSX.Caption = "To XLSX";
+            this.bPL_XLSX.Glyph = ((System.Drawing.Image)(resources.GetObject("bPL_XLSX.Glyph")));
+            this.bPL_XLSX.Id = 16;
+            this.bPL_XLSX.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPL_XLSX.LargeGlyph")));
+            this.bPL_XLSX.Name = "bPL_XLSX";
+            this.bPL_XLSX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPL_XLSX_ItemClick);
+            // 
+            // bFind
+            // 
+            this.bFind.Caption = "&Find";
+            this.bFind.Glyph = ((System.Drawing.Image)(resources.GetObject("bFind.Glyph")));
+            this.bFind.Id = 17;
+            this.bFind.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F));
+            this.bFind.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bFind.LargeGlyph")));
+            this.bFind.Name = "bFind";
+            this.bFind.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.bFind_CheckedChanged);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -169,9 +317,18 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.bNew);
             this.ribbonPageGroup1.ItemLinks.Add(this.bEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.bDel);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bFind, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Records";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.bPrint);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bExport);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.ShowCaptionButton = false;
+            this.ribbonPageGroup2.Text = "Print & Export";
             // 
             // grd
             // 
@@ -202,6 +359,7 @@
             this.grv.GridControl = this.grd;
             this.grv.Name = "grv";
             this.grv.OptionsView.ShowGroupPanel = false;
+            this.grv.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.grv_PopupMenuShowing);
             this.grv.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grv_FocusedRowChanged);
             // 
             // colPID
@@ -352,6 +510,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lbAMT);
             this.layoutControl1.Controls.Add(this.lbMED);
             this.layoutControl1.Controls.Add(this.lbTMP);
             this.layoutControl1.Controls.Add(this.lbEXM);
@@ -366,9 +525,18 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // lbAMT
+            // 
+            this.lbAMT.Location = new System.Drawing.Point(24, 309);
+            this.lbAMT.Name = "lbAMT";
+            this.lbAMT.Size = new System.Drawing.Size(63, 13);
+            this.lbAMT.StyleController = this.layoutControl1;
+            this.lbAMT.TabIndex = 9;
+            this.lbAMT.Text = "labelControl1";
+            // 
             // lbMED
             // 
-            this.lbMED.Location = new System.Drawing.Point(24, 309);
+            this.lbMED.Location = new System.Drawing.Point(24, 275);
             this.lbMED.Name = "lbMED";
             this.lbMED.Size = new System.Drawing.Size(63, 13);
             this.lbMED.StyleController = this.layoutControl1;
@@ -377,7 +545,7 @@
             // 
             // lbTMP
             // 
-            this.lbTMP.Location = new System.Drawing.Point(24, 275);
+            this.lbTMP.Location = new System.Drawing.Point(24, 241);
             this.lbTMP.Name = "lbTMP";
             this.lbTMP.Size = new System.Drawing.Size(63, 13);
             this.lbTMP.StyleController = this.layoutControl1;
@@ -386,7 +554,7 @@
             // 
             // lbEXM
             // 
-            this.lbEXM.Location = new System.Drawing.Point(24, 241);
+            this.lbEXM.Location = new System.Drawing.Point(24, 207);
             this.lbEXM.Name = "lbEXM";
             this.lbEXM.Size = new System.Drawing.Size(63, 13);
             this.lbEXM.StyleController = this.layoutControl1;
@@ -395,7 +563,7 @@
             // 
             // lbCMP
             // 
-            this.lbCMP.Location = new System.Drawing.Point(24, 207);
+            this.lbCMP.Location = new System.Drawing.Point(24, 173);
             this.lbCMP.Name = "lbCMP";
             this.lbCMP.Size = new System.Drawing.Size(63, 13);
             this.lbCMP.StyleController = this.layoutControl1;
@@ -408,7 +576,7 @@
             this.grdT.MainView = this.grvT;
             this.grdT.MenuManager = this.ribbonControl1;
             this.grdT.Name = "grdT";
-            this.grdT.Size = new System.Drawing.Size(249, 162);
+            this.grdT.Size = new System.Drawing.Size(249, 128);
             this.grdT.TabIndex = 4;
             this.grdT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvT});
@@ -478,7 +646,7 @@
             this.layoutControlItem1.Control = this.grdT;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(253, 166);
+            this.layoutControlItem1.Size = new System.Drawing.Size(253, 132);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -492,10 +660,12 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 166);
+            this.layoutControlItem5,
+            this.simpleLabelItem4,
+            this.layoutControlItem6});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 132);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(253, 160);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(253, 194);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // simpleLabelItem1
@@ -578,72 +748,102 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // ribbonPageGroup2
+            // simpleLabelItem4
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.bPrint);
-            this.ribbonPageGroup2.ItemLinks.Add(this.bExport);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.ShowCaptionButton = false;
-            this.ribbonPageGroup2.Text = "Print & Export";
+            this.simpleLabelItem4.AllowHotTrack = false;
+            this.simpleLabelItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.simpleLabelItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.simpleLabelItem4.Location = new System.Drawing.Point(0, 136);
+            this.simpleLabelItem4.Name = "simpleLabelItem4";
+            this.simpleLabelItem4.Size = new System.Drawing.Size(229, 17);
+            this.simpleLabelItem4.Text = "Amount:";
+            this.simpleLabelItem4.TextSize = new System.Drawing.Size(91, 13);
             // 
-            // bPrint
+            // layoutControlItem6
             // 
-            this.bPrint.Caption = "&Print";
-            this.bPrint.Glyph = ((System.Drawing.Image)(resources.GetObject("bPrint.Glyph")));
-            this.bPrint.Id = 4;
-            this.bPrint.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPrint.LargeGlyph")));
-            this.bPrint.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bPrintPatientDetail),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bPrintPatientList)});
-            this.bPrint.Name = "bPrint";
+            this.layoutControlItem6.Control = this.lbAMT;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 153);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(229, 17);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
-            // bPrintPatientDetail
+            // cMenu
             // 
-            this.bPrintPatientDetail.Caption = "Patient Detail";
-            this.bPrintPatientDetail.Id = 5;
-            this.bPrintPatientDetail.Name = "bPrintPatientDetail";
+            this.cMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.findToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.printToolStripMenuItem});
+            this.cMenu.Name = "contextMenuStrip1";
+            this.cMenu.Size = new System.Drawing.Size(153, 148);
             // 
-            // bPrintPatientList
+            // newToolStripMenuItem
             // 
-            this.bPrintPatientList.Caption = "Patient List";
-            this.bPrintPatientList.Id = 6;
-            this.bPrintPatientList.Name = "bPrintPatientList";
+            this.newToolStripMenuItem.Image = global::Clinic.Properties.Resources.New_16x16;
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Text = "&New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
-            // bExport
+            // editToolStripMenuItem
             // 
-            this.bExport.Caption = "E&xport";
-            this.bExport.Glyph = ((System.Drawing.Image)(resources.GetObject("bExport.Glyph")));
-            this.bExport.Id = 7;
-            this.bExport.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bExport.LargeGlyph")));
-            this.bExport.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bExpPDF),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bExpXLS),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bExpXLSX)});
-            this.bExport.Name = "bExport";
+            this.editToolStripMenuItem.Image = global::Clinic.Properties.Resources.Edit_16x16;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem.Text = "&Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
-            // bExpPDF
+            // deleteToolStripMenuItem
             // 
-            this.bExpPDF.Caption = "To PDF";
-            this.bExpPDF.Glyph = ((System.Drawing.Image)(resources.GetObject("bExpPDF.Glyph")));
-            this.bExpPDF.Id = 8;
-            this.bExpPDF.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bExpPDF.LargeGlyph")));
-            this.bExpPDF.Name = "bExpPDF";
+            this.deleteToolStripMenuItem.Image = global::Clinic.Properties.Resources.Delete_16x16;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "&Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
-            // bExpXLS
+            // toolStripSeparator1
             // 
-            this.bExpXLS.Caption = "To XLS";
-            this.bExpXLS.Glyph = ((System.Drawing.Image)(resources.GetObject("bExpXLS.Glyph")));
-            this.bExpXLS.Id = 9;
-            this.bExpXLS.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bExpXLS.LargeGlyph")));
-            this.bExpXLS.Name = "bExpXLS";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
-            // bExpXLSX
+            // findToolStripMenuItem
             // 
-            this.bExpXLSX.Caption = "To XLSX";
-            this.bExpXLSX.Glyph = ((System.Drawing.Image)(resources.GetObject("bExpXLSX.Glyph")));
-            this.bExpXLSX.Id = 10;
-            this.bExpXLSX.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bExpXLSX.LargeGlyph")));
-            this.bExpXLSX.Name = "bExpXLSX";
+            this.findToolStripMenuItem.Name = "findToolStripMenuItem";
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.findToolStripMenuItem.Text = "Find";
+            this.findToolStripMenuItem.Click += new System.EventHandler(this.findToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.patientDetailToolStripMenuItem,
+            this.patientListToolStripMenuItem});
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Text = "&Print";
+            // 
+            // patientDetailToolStripMenuItem
+            // 
+            this.patientDetailToolStripMenuItem.Name = "patientDetailToolStripMenuItem";
+            this.patientDetailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patientDetailToolStripMenuItem.Text = "Patient Detail";
+            this.patientDetailToolStripMenuItem.Click += new System.EventHandler(this.patientDetailToolStripMenuItem_Click);
+            // 
+            // patientListToolStripMenuItem
+            // 
+            this.patientListToolStripMenuItem.Name = "patientListToolStripMenuItem";
+            this.patientListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patientListToolStripMenuItem.Text = "Patient List";
+            this.patientListToolStripMenuItem.Click += new System.EventHandler(this.patientListToolStripMenuItem_Click);
             // 
             // ucPatients
             // 
@@ -677,6 +877,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            this.cMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -731,8 +934,27 @@
         private DevExpress.XtraBars.BarButtonItem bPrintPatientList;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarSubItem bExport;
-        private DevExpress.XtraBars.BarButtonItem bExpPDF;
-        private DevExpress.XtraBars.BarButtonItem bExpXLS;
-        private DevExpress.XtraBars.BarButtonItem bExpXLSX;
+        private DevExpress.XtraBars.BarButtonItem bPD_PDF;
+        private DevExpress.XtraBars.BarButtonItem bPD_XLS;
+        private DevExpress.XtraBars.BarButtonItem bPD_XLSX;
+        private DevExpress.XtraEditors.LabelControl lbAMT;
+        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem bPL_PDF;
+        private DevExpress.XtraBars.BarButtonItem bPL_XLS;
+        private DevExpress.XtraBars.BarButtonItem bPL_XLSX;
+        private DevExpress.XtraBars.BarCheckItem bFind;
+        private System.Windows.Forms.ContextMenuStrip cMenu;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patientDetailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patientListToolStripMenuItem;
     }
 }

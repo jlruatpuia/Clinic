@@ -30,6 +30,14 @@
         {
             DevExpress.XtraPrinting.BarCode.QRCodeGenerator qrCodeGenerator1 = new DevExpress.XtraPrinting.BarCode.QRCodeGenerator();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbCMP = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbEXM = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbTMP = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbMED = new DevExpress.XtraReports.UI.XRLabel();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -53,14 +61,10 @@
             this.lbPID = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbCMP = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbEXM = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbTMP = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbMED = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbRGN = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbQLN = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbDOC = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -78,6 +82,127 @@
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel10
+            // 
+            this.xrLabel10.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLabel10.Name = "xrLabel10";
+            this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(119.625F, 25F);
+            this.xrLabel10.StylePriority.UseBorders = false;
+            this.xrLabel10.StylePriority.UseFont = false;
+            this.xrLabel10.StylePriority.UsePadding = false;
+            this.xrLabel10.StylePriority.UseTextAlignment = false;
+            this.xrLabel10.Text = "Chief Complain:";
+            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lbCMP
+            // 
+            this.lbCMP.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbCMP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCMP.LocationFloat = new DevExpress.Utils.PointFloat(119.625F, 0F);
+            this.lbCMP.Name = "lbCMP";
+            this.lbCMP.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbCMP.SizeF = new System.Drawing.SizeF(363.375F, 25F);
+            this.lbCMP.StylePriority.UseBorders = false;
+            this.lbCMP.StylePriority.UseFont = false;
+            this.lbCMP.StylePriority.UsePadding = false;
+            this.lbCMP.StylePriority.UseTextAlignment = false;
+            this.lbCMP.Text = "lbCMP";
+            this.lbCMP.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel13
+            // 
+            this.xrLabel13.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel13.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(0F, 25F);
+            this.xrLabel13.Name = "xrLabel13";
+            this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
+            this.xrLabel13.SizeF = new System.Drawing.SizeF(119.625F, 25F);
+            this.xrLabel13.StylePriority.UseBorders = false;
+            this.xrLabel13.StylePriority.UseFont = false;
+            this.xrLabel13.StylePriority.UsePadding = false;
+            this.xrLabel13.StylePriority.UseTextAlignment = false;
+            this.xrLabel13.Text = "Examination:";
+            this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lbEXM
+            // 
+            this.lbEXM.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbEXM.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEXM.LocationFloat = new DevExpress.Utils.PointFloat(119.625F, 25F);
+            this.lbEXM.Name = "lbEXM";
+            this.lbEXM.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbEXM.SizeF = new System.Drawing.SizeF(363.375F, 25F);
+            this.lbEXM.StylePriority.UseBorders = false;
+            this.lbEXM.StylePriority.UseFont = false;
+            this.lbEXM.StylePriority.UsePadding = false;
+            this.lbEXM.StylePriority.UseTextAlignment = false;
+            this.lbEXM.Text = "lbEXM";
+            this.lbEXM.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel15
+            // 
+            this.xrLabel15.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(0F, 50F);
+            this.xrLabel15.Name = "xrLabel15";
+            this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
+            this.xrLabel15.SizeF = new System.Drawing.SizeF(119.625F, 25F);
+            this.xrLabel15.StylePriority.UseBorders = false;
+            this.xrLabel15.StylePriority.UseFont = false;
+            this.xrLabel15.StylePriority.UsePadding = false;
+            this.xrLabel15.StylePriority.UseTextAlignment = false;
+            this.xrLabel15.Text = "Treatment Plan:";
+            this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lbTMP
+            // 
+            this.lbTMP.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbTMP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTMP.LocationFloat = new DevExpress.Utils.PointFloat(119.625F, 50F);
+            this.lbTMP.Name = "lbTMP";
+            this.lbTMP.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbTMP.SizeF = new System.Drawing.SizeF(363.375F, 25F);
+            this.lbTMP.StylePriority.UseBorders = false;
+            this.lbTMP.StylePriority.UseFont = false;
+            this.lbTMP.StylePriority.UsePadding = false;
+            this.lbTMP.StylePriority.UseTextAlignment = false;
+            this.lbTMP.Text = "lbTMP";
+            this.lbTMP.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel17
+            // 
+            this.xrLabel17.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(0F, 75F);
+            this.xrLabel17.Name = "xrLabel17";
+            this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
+            this.xrLabel17.SizeF = new System.Drawing.SizeF(119.625F, 25F);
+            this.xrLabel17.StylePriority.UseBorders = false;
+            this.xrLabel17.StylePriority.UseFont = false;
+            this.xrLabel17.StylePriority.UsePadding = false;
+            this.xrLabel17.StylePriority.UseTextAlignment = false;
+            this.xrLabel17.Text = "Medicine:";
+            this.xrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lbMED
+            // 
+            this.lbMED.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.lbMED.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMED.LocationFloat = new DevExpress.Utils.PointFloat(119.625F, 75F);
+            this.lbMED.Multiline = true;
+            this.lbMED.Name = "lbMED";
+            this.lbMED.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbMED.SizeF = new System.Drawing.SizeF(363.375F, 25F);
+            this.lbMED.StylePriority.UseBorders = false;
+            this.lbMED.StylePriority.UseFont = false;
+            this.lbMED.StylePriority.UsePadding = false;
+            this.lbMED.StylePriority.UseTextAlignment = false;
+            this.lbMED.Text = "lbMED";
+            this.lbMED.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // TopMargin
             // 
@@ -326,126 +451,44 @@
             this.xrLabel5.StylePriority.UsePadding = false;
             this.xrLabel5.Text = "Patient Information";
             // 
-            // xrLabel10
+            // lbRGN
             // 
-            this.xrLabel10.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrLabel10.Name = "xrLabel10";
-            this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(119.625F, 25F);
-            this.xrLabel10.StylePriority.UseBorders = false;
-            this.xrLabel10.StylePriority.UseFont = false;
-            this.xrLabel10.StylePriority.UsePadding = false;
-            this.xrLabel10.StylePriority.UseTextAlignment = false;
-            this.xrLabel10.Text = "Chief Complain:";
-            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lbRGN.LocationFloat = new DevExpress.Utils.PointFloat(268.4167F, 46.00003F);
+            this.lbRGN.Name = "lbRGN";
+            this.lbRGN.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbRGN.SizeF = new System.Drawing.SizeF(214.5833F, 23F);
+            this.lbRGN.StylePriority.UseTextAlignment = false;
+            this.lbRGN.Text = "Regn. No - 900A";
+            this.lbRGN.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // lbCMP
+            // lbQLN
             // 
-            this.lbCMP.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbCMP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCMP.LocationFloat = new DevExpress.Utils.PointFloat(119.625F, 0F);
-            this.lbCMP.Name = "lbCMP";
-            this.lbCMP.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbCMP.SizeF = new System.Drawing.SizeF(363.375F, 25F);
-            this.lbCMP.StylePriority.UseBorders = false;
-            this.lbCMP.StylePriority.UseFont = false;
-            this.lbCMP.StylePriority.UsePadding = false;
-            this.lbCMP.StylePriority.UseTextAlignment = false;
-            this.lbCMP.Text = "lbCMP";
-            this.lbCMP.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lbQLN.LocationFloat = new DevExpress.Utils.PointFloat(268.4167F, 23.00002F);
+            this.lbQLN.Name = "lbQLN";
+            this.lbQLN.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbQLN.SizeF = new System.Drawing.SizeF(214.5833F, 23F);
+            this.lbQLN.StylePriority.UseTextAlignment = false;
+            this.lbQLN.Text = "BDS Guwahati";
+            this.lbQLN.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel13
+            // lbDOC
             // 
-            this.xrLabel13.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel13.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(0F, 25F);
-            this.xrLabel13.Name = "xrLabel13";
-            this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
-            this.xrLabel13.SizeF = new System.Drawing.SizeF(119.625F, 25F);
-            this.xrLabel13.StylePriority.UseBorders = false;
-            this.xrLabel13.StylePriority.UseFont = false;
-            this.xrLabel13.StylePriority.UsePadding = false;
-            this.xrLabel13.StylePriority.UseTextAlignment = false;
-            this.xrLabel13.Text = "Examination:";
-            this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lbDOC.LocationFloat = new DevExpress.Utils.PointFloat(268.4167F, 0F);
+            this.lbDOC.Name = "lbDOC";
+            this.lbDOC.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbDOC.SizeF = new System.Drawing.SizeF(214.5833F, 23F);
+            this.lbDOC.StylePriority.UseTextAlignment = false;
+            this.lbDOC.Text = "Dr. Rebecca L. Renthlei (BDS)";
+            this.lbDOC.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // lbEXM
+            // PageFooter
             // 
-            this.lbEXM.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbEXM.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEXM.LocationFloat = new DevExpress.Utils.PointFloat(119.625F, 25F);
-            this.lbEXM.Name = "lbEXM";
-            this.lbEXM.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbEXM.SizeF = new System.Drawing.SizeF(363.375F, 25F);
-            this.lbEXM.StylePriority.UseBorders = false;
-            this.lbEXM.StylePriority.UseFont = false;
-            this.lbEXM.StylePriority.UsePadding = false;
-            this.lbEXM.StylePriority.UseTextAlignment = false;
-            this.lbEXM.Text = "lbEXM";
-            this.lbEXM.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel15
-            // 
-            this.xrLabel15.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(0F, 50F);
-            this.xrLabel15.Name = "xrLabel15";
-            this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
-            this.xrLabel15.SizeF = new System.Drawing.SizeF(119.625F, 25F);
-            this.xrLabel15.StylePriority.UseBorders = false;
-            this.xrLabel15.StylePriority.UseFont = false;
-            this.xrLabel15.StylePriority.UsePadding = false;
-            this.xrLabel15.StylePriority.UseTextAlignment = false;
-            this.xrLabel15.Text = "Treatment Plan:";
-            this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lbTMP
-            // 
-            this.lbTMP.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbTMP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTMP.LocationFloat = new DevExpress.Utils.PointFloat(119.625F, 50F);
-            this.lbTMP.Name = "lbTMP";
-            this.lbTMP.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbTMP.SizeF = new System.Drawing.SizeF(363.375F, 25F);
-            this.lbTMP.StylePriority.UseBorders = false;
-            this.lbTMP.StylePriority.UseFont = false;
-            this.lbTMP.StylePriority.UsePadding = false;
-            this.lbTMP.StylePriority.UseTextAlignment = false;
-            this.lbTMP.Text = "lbTMP";
-            this.lbTMP.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel17
-            // 
-            this.xrLabel17.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(0F, 75F);
-            this.xrLabel17.Name = "xrLabel17";
-            this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
-            this.xrLabel17.SizeF = new System.Drawing.SizeF(119.625F, 25F);
-            this.xrLabel17.StylePriority.UseBorders = false;
-            this.xrLabel17.StylePriority.UseFont = false;
-            this.xrLabel17.StylePriority.UsePadding = false;
-            this.xrLabel17.StylePriority.UseTextAlignment = false;
-            this.xrLabel17.Text = "Medicine:";
-            this.xrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lbMED
-            // 
-            this.lbMED.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.lbMED.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMED.LocationFloat = new DevExpress.Utils.PointFloat(119.625F, 75F);
-            this.lbMED.Multiline = true;
-            this.lbMED.Name = "lbMED";
-            this.lbMED.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbMED.SizeF = new System.Drawing.SizeF(363.375F, 25F);
-            this.lbMED.StylePriority.UseBorders = false;
-            this.lbMED.StylePriority.UseFont = false;
-            this.lbMED.StylePriority.UsePadding = false;
-            this.lbMED.StylePriority.UseTextAlignment = false;
-            this.lbMED.Text = "lbMED";
-            this.lbMED.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lbDOC,
+            this.lbQLN,
+            this.lbRGN});
+            this.PageFooter.HeightF = 69.00003F;
+            this.PageFooter.Name = "PageFooter";
             // 
             // rptClinicReport
             // 
@@ -454,7 +497,8 @@
             this.TopMargin,
             this.BottomMargin,
             this.ReportHeader,
-            this.PageHeader});
+            this.PageHeader,
+            this.PageFooter});
             this.DisplayName = "Clinic Report";
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
@@ -500,5 +544,9 @@
         private DevExpress.XtraReports.UI.XRLabel lbTMP;
         private DevExpress.XtraReports.UI.XRLabel xrLabel17;
         private DevExpress.XtraReports.UI.XRLabel lbMED;
+        private DevExpress.XtraReports.UI.XRLabel lbRGN;
+        private DevExpress.XtraReports.UI.XRLabel lbQLN;
+        private DevExpress.XtraReports.UI.XRLabel lbDOC;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
     }
 }

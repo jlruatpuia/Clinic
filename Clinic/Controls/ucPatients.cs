@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace Clinic.Controls
 {
@@ -24,6 +25,7 @@ namespace Clinic.Controls
             lbEXM.Text = "";
             lbMED.Text = "";
             lbTMP.Text = "";
+            lbAMT.Text = "";
         }
 
         void LoadPatients()
@@ -116,6 +118,7 @@ namespace Clinic.Controls
             }
             
             lbTMP.Text = t.Treatment;
+            lbAMT.Text = "₹ " + t.Amount.ToString();
         }
 
         private void bEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -142,6 +145,140 @@ namespace Clinic.Controls
                     XtraMessageBox.Show(sc.Message);
                 }
             }
+        }
+
+        private void bPrintPatientDetail_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string pid = grv.GetFocusedRowCellValue(colPID).ToString();
+            new rptPatientDetail(pid).ShowPreviewDialog();
+        }
+
+        private void bPD_PDF_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string pid = grv.GetFocusedRowCellValue(colPID).ToString();
+            rptPatientDetail rpt = new rptPatientDetail(pid);
+            SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF File|*.pdf|All Files|*.*"};
+            if(sfd.ShowDialog() == DialogResult.OK)
+            {
+                rpt.ExportToPdf(sfd.FileName);
+            }
+        }
+
+        private void bPD_XLS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string pid = grv.GetFocusedRowCellValue(colPID).ToString();
+            rptPatientDetail rpt = new rptPatientDetail(pid);
+            SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel 2003 File|*.xls|All Files|*.*" };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                rpt.ExportToXls(sfd.FileName);
+            }
+        }
+
+        private void bPD_XLSX_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string pid = grv.GetFocusedRowCellValue(colPID).ToString();
+            rptPatientDetail rpt = new rptPatientDetail(pid);
+            SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel 2007 File|*.xlsx|All Files|*.*" };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                rpt.ExportToXlsx(sfd.FileName);
+            }
+        }
+
+        private void bPrintPatientList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new rptPatientList().ShowPreviewDialog();
+        }
+
+        private void bPL_PDF_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF File|*.pdf|All Files|*.*" };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                new rptPatientList().ExportToPdf(sfd.FileName);
+            }
+        }
+
+        private void bPL_XLS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel 2003 File|*.xls|All Files|*.*" };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                new rptPatientList().ExportToXls(sfd.FileName);
+            }
+        }
+
+        private void bPL_XLSX_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel 2007 File|*.xlsx|All Files|*.*" };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                new rptPatientList().ExportToXlsx(sfd.FileName);
+            }
+        }
+
+        private void bFind_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (bFind.Checked)
+            {
+                grv.OptionsFind.AlwaysVisible = true;
+                findToolStripMenuItem.Checked = true;
+            }
+            else
+            {
+                grv.OptionsFind.AlwaysVisible = false;
+                findToolStripMenuItem.Checked = false;
+            }
+        }
+
+        private void grv_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        {
+            if (e.HitInfo.InRow)
+            {
+                grv.FocusedRowHandle = e.HitInfo.RowHandle;
+                cMenu.Show(grv.GridControl, e.Point);
+            }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bNew_ItemClick(null, null);
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bEdit_ItemClick(null, null);
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bDel_ItemClick(null, null);
+        }
+
+        private void findToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (findToolStripMenuItem.Checked)
+            {
+                grv.OptionsFind.AlwaysVisible = false;
+                bFind.Checked = false;
+            }
+            else
+            {
+                grv.OptionsFind.AlwaysVisible = true;
+                bFind.Checked = true;
+            }
+        }
+
+        private void patientDetailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bPrintPatientDetail_ItemClick(null, null);
+
+        }
+
+        private void patientListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bPrintPatientList_ItemClick(null, null);
         }
     }
 }

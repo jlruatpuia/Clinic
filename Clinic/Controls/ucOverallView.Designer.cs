@@ -33,7 +33,15 @@
             this.bPrint = new DevExpress.XtraBars.BarSubItem();
             this.bClinicReport = new DevExpress.XtraBars.BarButtonItem();
             this.bCurrentView = new DevExpress.XtraBars.BarButtonItem();
+            this.bExport = new DevExpress.XtraBars.BarSubItem();
+            this.beiFR = new DevExpress.XtraBars.BarEditItem();
+            this.dtpFR = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.beiTO = new DevExpress.XtraBars.BarEditItem();
+            this.dtpTO = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.bShow = new DevExpress.XtraBars.BarButtonItem();
+            this.bFind = new DevExpress.XtraBars.BarCheckItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.grd = new DevExpress.XtraGrid.GridControl();
             this.grv = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -44,20 +52,21 @@
             this.colADR = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPHN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAMT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bExport = new DevExpress.XtraBars.BarSubItem();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.beiFR = new DevExpress.XtraBars.BarEditItem();
-            this.dtpFR = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.beiTO = new DevExpress.XtraBars.BarEditItem();
-            this.dtpTO = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.bShow = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.bPD_PDF = new DevExpress.XtraBars.BarButtonItem();
+            this.bPD_XLS = new DevExpress.XtraBars.BarButtonItem();
+            this.bPD_XLSX = new DevExpress.XtraBars.BarButtonItem();
+            this.bCV_PDF = new DevExpress.XtraBars.BarButtonItem();
+            this.bCV_XLS = new DevExpress.XtraBars.BarButtonItem();
+            this.bCV_XLSX = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFR.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpTO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpTO.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -71,9 +80,18 @@
             this.bExport,
             this.beiFR,
             this.beiTO,
-            this.bShow});
+            this.bShow,
+            this.bFind,
+            this.barSubItem1,
+            this.barSubItem2,
+            this.bPD_PDF,
+            this.bPD_XLS,
+            this.bPD_XLSX,
+            this.bCV_PDF,
+            this.bCV_XLS,
+            this.bCV_XLSX});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 10;
+            this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -105,6 +123,71 @@
             this.bCurrentView.Caption = "Current View";
             this.bCurrentView.Id = 4;
             this.bCurrentView.Name = "bCurrentView";
+            this.bCurrentView.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bCurrentView_ItemClick);
+            // 
+            // bExport
+            // 
+            this.bExport.Caption = "E&xport";
+            this.bExport.Glyph = ((System.Drawing.Image)(resources.GetObject("bExport.Glyph")));
+            this.bExport.Id = 6;
+            this.bExport.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bExport.LargeGlyph")));
+            this.bExport.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2)});
+            this.bExport.Name = "bExport";
+            // 
+            // beiFR
+            // 
+            this.beiFR.Caption = "From:";
+            this.beiFR.Edit = this.dtpFR;
+            this.beiFR.Id = 7;
+            this.beiFR.Name = "beiFR";
+            this.beiFR.Width = 100;
+            // 
+            // dtpFR
+            // 
+            this.dtpFR.AutoHeight = false;
+            this.dtpFR.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpFR.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpFR.Name = "dtpFR";
+            // 
+            // beiTO
+            // 
+            this.beiTO.Caption = "To:    ";
+            this.beiTO.Edit = this.dtpTO;
+            this.beiTO.Id = 8;
+            this.beiTO.Name = "beiTO";
+            this.beiTO.Width = 100;
+            // 
+            // dtpTO
+            // 
+            this.dtpTO.AutoHeight = false;
+            this.dtpTO.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpTO.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpTO.Name = "dtpTO";
+            // 
+            // bShow
+            // 
+            this.bShow.Caption = "&Show";
+            this.bShow.Glyph = ((System.Drawing.Image)(resources.GetObject("bShow.Glyph")));
+            this.bShow.Id = 9;
+            this.bShow.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bShow.LargeGlyph")));
+            this.bShow.Name = "bShow";
+            this.bShow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bShow_ItemClick);
+            // 
+            // bFind
+            // 
+            this.bFind.Caption = "&Find";
+            this.bFind.Glyph = ((System.Drawing.Image)(resources.GetObject("bFind.Glyph")));
+            this.bFind.Id = 12;
+            this.bFind.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F));
+            this.bFind.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bFind.LargeGlyph")));
+            this.bFind.Name = "bFind";
+            this.bFind.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.bFind_CheckedChanged);
             // 
             // ribbonPage1
             // 
@@ -114,6 +197,16 @@
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Overall View";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.beiFR);
+            this.ribbonPageGroup2.ItemLinks.Add(this.beiTO);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bShow);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bFind);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.ShowCaptionButton = false;
+            this.ribbonPageGroup2.Text = "View Selection";
             // 
             // ribbonPageGroup1
             // 
@@ -235,65 +328,79 @@
             this.colAMT.VisibleIndex = 5;
             this.colAMT.Width = 98;
             // 
-            // bExport
+            // barSubItem1
             // 
-            this.bExport.Caption = "E&xport";
-            this.bExport.Glyph = ((System.Drawing.Image)(resources.GetObject("bExport.Glyph")));
-            this.bExport.Id = 6;
-            this.bExport.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bExport.LargeGlyph")));
-            this.bExport.Name = "bExport";
+            this.barSubItem1.Caption = "Patient Report";
+            this.barSubItem1.Id = 13;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPD_PDF),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPD_XLS),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bPD_XLSX)});
+            this.barSubItem1.Name = "barSubItem1";
             // 
-            // ribbonPageGroup2
+            // barSubItem2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.beiFR);
-            this.ribbonPageGroup2.ItemLinks.Add(this.beiTO);
-            this.ribbonPageGroup2.ItemLinks.Add(this.bShow);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.ShowCaptionButton = false;
-            this.ribbonPageGroup2.Text = "View Selection";
+            this.barSubItem2.Caption = "Current View";
+            this.barSubItem2.Id = 14;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bCV_PDF),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bCV_XLS),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bCV_XLSX)});
+            this.barSubItem2.Name = "barSubItem2";
             // 
-            // beiFR
+            // bPD_PDF
             // 
-            this.beiFR.Caption = "From:";
-            this.beiFR.Edit = this.dtpFR;
-            this.beiFR.Id = 7;
-            this.beiFR.Name = "beiFR";
-            this.beiFR.Width = 100;
+            this.bPD_PDF.Caption = "To PDF";
+            this.bPD_PDF.Glyph = ((System.Drawing.Image)(resources.GetObject("bPD_PDF.Glyph")));
+            this.bPD_PDF.Id = 15;
+            this.bPD_PDF.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPD_PDF.LargeGlyph")));
+            this.bPD_PDF.Name = "bPD_PDF";
+            this.bPD_PDF.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPD_PDF_ItemClick);
             // 
-            // dtpFR
+            // bPD_XLS
             // 
-            this.dtpFR.AutoHeight = false;
-            this.dtpFR.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpFR.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpFR.Name = "dtpFR";
+            this.bPD_XLS.Caption = "To XLS";
+            this.bPD_XLS.Glyph = ((System.Drawing.Image)(resources.GetObject("bPD_XLS.Glyph")));
+            this.bPD_XLS.Id = 16;
+            this.bPD_XLS.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPD_XLS.LargeGlyph")));
+            this.bPD_XLS.Name = "bPD_XLS";
+            this.bPD_XLS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPD_XLS_ItemClick);
             // 
-            // beiTO
+            // bPD_XLSX
             // 
-            this.beiTO.Caption = "To:    ";
-            this.beiTO.Edit = this.dtpTO;
-            this.beiTO.Id = 8;
-            this.beiTO.Name = "beiTO";
-            this.beiTO.Width = 100;
+            this.bPD_XLSX.Caption = "To XLSX";
+            this.bPD_XLSX.Glyph = ((System.Drawing.Image)(resources.GetObject("bPD_XLSX.Glyph")));
+            this.bPD_XLSX.Id = 17;
+            this.bPD_XLSX.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPD_XLSX.LargeGlyph")));
+            this.bPD_XLSX.Name = "bPD_XLSX";
+            this.bPD_XLSX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPD_XLSX_ItemClick);
             // 
-            // dtpTO
+            // bCV_PDF
             // 
-            this.dtpTO.AutoHeight = false;
-            this.dtpTO.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpTO.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpTO.Name = "dtpTO";
+            this.bCV_PDF.Caption = "To PDF";
+            this.bCV_PDF.Glyph = ((System.Drawing.Image)(resources.GetObject("bCV_PDF.Glyph")));
+            this.bCV_PDF.Id = 18;
+            this.bCV_PDF.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bCV_PDF.LargeGlyph")));
+            this.bCV_PDF.Name = "bCV_PDF";
+            this.bCV_PDF.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bCV_PDF_ItemClick);
             // 
-            // bShow
+            // bCV_XLS
             // 
-            this.bShow.Caption = "&Show";
-            this.bShow.Glyph = ((System.Drawing.Image)(resources.GetObject("bShow.Glyph")));
-            this.bShow.Id = 9;
-            this.bShow.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bShow.LargeGlyph")));
-            this.bShow.Name = "bShow";
-            this.bShow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bShow_ItemClick);
+            this.bCV_XLS.Caption = "To XLS";
+            this.bCV_XLS.Glyph = ((System.Drawing.Image)(resources.GetObject("bCV_XLS.Glyph")));
+            this.bCV_XLS.Id = 19;
+            this.bCV_XLS.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bCV_XLS.LargeGlyph")));
+            this.bCV_XLS.Name = "bCV_XLS";
+            this.bCV_XLS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bCV_XLS_ItemClick);
+            // 
+            // bCV_XLSX
+            // 
+            this.bCV_XLSX.Caption = "To XLSX";
+            this.bCV_XLSX.Glyph = ((System.Drawing.Image)(resources.GetObject("bCV_XLSX.Glyph")));
+            this.bCV_XLSX.Id = 20;
+            this.bCV_XLSX.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bCV_XLSX.LargeGlyph")));
+            this.bCV_XLSX.Name = "bCV_XLSX";
+            this.bCV_XLSX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bCV_XLSX_ItemClick);
             // 
             // ucOverallView
             // 
@@ -304,12 +411,12 @@
             this.Name = "ucOverallView";
             this.Size = new System.Drawing.Size(821, 502);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFR.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpTO.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpTO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +445,14 @@
         private DevExpress.XtraBars.BarEditItem beiTO;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit dtpTO;
         private DevExpress.XtraBars.BarButtonItem bShow;
+        private DevExpress.XtraBars.BarCheckItem bFind;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem bPD_PDF;
+        private DevExpress.XtraBars.BarButtonItem bPD_XLS;
+        private DevExpress.XtraBars.BarButtonItem bPD_XLSX;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem bCV_PDF;
+        private DevExpress.XtraBars.BarButtonItem bCV_XLS;
+        private DevExpress.XtraBars.BarButtonItem bCV_XLSX;
     }
 }

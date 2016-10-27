@@ -85,7 +85,7 @@
             this.daApp = new Clinic.dsClinicTableAdapters.AppointmentsTableAdapter();
             this.daRes = new Clinic.dsClinicTableAdapters.ResourcesTableAdapter();
             this.dm = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dp = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dateNavigator1 = new DevExpress.XtraScheduler.DateNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -98,7 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsRes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dm)).BeginInit();
-            this.dockPanel1.SuspendLayout();
+            this.dp.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
             this.SuspendLayout();
@@ -444,6 +444,7 @@
             this.sch.Views.FullWeekView.TimeRulers.Add(timeRuler2);
             this.sch.Views.GanttView.Enabled = false;
             this.sch.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
+            this.sch.SelectionChanged += new System.EventHandler(this.sch_SelectionChanged);
             this.sch.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.sch_EditAppointmentFormShowing);
             // 
             // schStorage
@@ -535,7 +536,7 @@
             // 
             this.dm.Form = this;
             this.dm.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
+            this.dp});
             this.dm.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -547,26 +548,28 @@
             "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
             "DevExpress.XtraBars.Navigation.TileNavPane"});
             // 
-            // dockPanel1
+            // dp
             // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.ID = new System.Guid("f6361576-17b9-4e95-8307-034c7a69df6a");
-            this.dockPanel1.Location = new System.Drawing.Point(565, 141);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.Options.AllowDockAsTabbedDocument = false;
-            this.dockPanel1.Options.AllowDockBottom = false;
-            this.dockPanel1.Options.AllowDockFill = false;
-            this.dockPanel1.Options.AllowDockLeft = false;
-            this.dockPanel1.Options.AllowDockTop = false;
-            this.dockPanel1.Options.AllowFloating = false;
-            this.dockPanel1.Options.FloatOnDblClick = false;
-            this.dockPanel1.Options.ResizeDirection = DevExpress.XtraBars.Docking.Helpers.ResizeDirection.None;
-            this.dockPanel1.Options.ShowCloseButton = false;
-            this.dockPanel1.Options.ShowMaximizeButton = false;
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(222, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(222, 317);
-            this.dockPanel1.Text = "Navigate";
+            this.dp.Controls.Add(this.dockPanel1_Container);
+            this.dp.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dp.ID = new System.Guid("f6361576-17b9-4e95-8307-034c7a69df6a");
+            this.dp.Location = new System.Drawing.Point(565, 141);
+            this.dp.Name = "dp";
+            this.dp.Options.AllowDockAsTabbedDocument = false;
+            this.dp.Options.AllowDockBottom = false;
+            this.dp.Options.AllowDockFill = false;
+            this.dp.Options.AllowDockLeft = false;
+            this.dp.Options.AllowDockTop = false;
+            this.dp.Options.AllowFloating = false;
+            this.dp.Options.FloatOnDblClick = false;
+            this.dp.Options.ResizeDirection = DevExpress.XtraBars.Docking.Helpers.ResizeDirection.None;
+            this.dp.Options.ShowCloseButton = false;
+            this.dp.Options.ShowMaximizeButton = false;
+            this.dp.OriginalSize = new System.Drawing.Size(222, 200);
+            this.dp.Size = new System.Drawing.Size(222, 317);
+            this.dp.Text = "Navigate";
+            this.dp.Expanded += new DevExpress.XtraBars.Docking.DockPanelEventHandler(this.dp_Expanded);
+            this.dp.Collapsed += new DevExpress.XtraBars.Docking.DockPanelEventHandler(this.dp_Collapsed);
             // 
             // dockPanel1_Container
             // 
@@ -592,7 +595,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.sch);
-            this.Controls.Add(this.dockPanel1);
+            this.Controls.Add(this.dp);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "ucAppointments";
             this.Size = new System.Drawing.Size(787, 458);
@@ -607,7 +610,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsRes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dm)).EndInit();
-            this.dockPanel1.ResumeLayout(false);
+            this.dp.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
             this.ResumeLayout(false);
@@ -642,7 +645,7 @@
         private dsClinicTableAdapters.AppointmentsTableAdapter daApp;
         private dsClinicTableAdapters.ResourcesTableAdapter daRes;
         private DevExpress.XtraBars.Docking.DockManager dm;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.DockPanel dp;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraScheduler.DateNavigator dateNavigator1;
         private DevExpress.XtraScheduler.UI.EditAppointmentQueryItem editAppointmentQueryItem1;

@@ -31,6 +31,7 @@ namespace Clinic
         public string RelativeName { get; set; }
         public string Relationship { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public int Age { get; set; }
         public string Sex { get; set; }
         public string MedicalHistory { get; set; }
         public string Comments { get; set; }
@@ -72,6 +73,15 @@ namespace Clinic
         public string[] Medicine { get; set; }
     }
 
+    public class Doctor
+    {
+        public int UniqueID { get; set; }
+        public string ResourceName { get; set; }
+        public string Designation { get; set; }
+        public string Institution { get; set; }
+        public string RegdNo { get; set; }
+    }
+
     public class PatientContext
     {
         OleDbConnection cm = new OleDbConnection(Properties.Settings.Default.cs);
@@ -101,6 +111,7 @@ namespace Clinic
                     p.ID = PatientID;
                     p.PatientName = rd[1].ToString();
                     p.DateOfBirth = DateTime.Parse(rd[2].ToString());
+                    p.Age = Convert.ToInt32(rd[3]);
                     p.Sex = rd[4].ToString();
                     p.MedicalHistory = rd[5].ToString();
                     p.Comments = rd[6].ToString();
@@ -218,6 +229,7 @@ namespace Clinic
             sc.DT = ds.Tables[0];
             return sc;
         }
+
     }
 
     public class TreatmentContext
@@ -273,6 +285,8 @@ namespace Clinic
             {
                 cm.Open();
                 cmd.ExecuteNonQuery();
+                cmd = new OleDbCommand("SELECT DMAX('ID', 'Treatments')", cm);
+                sc.Count = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch(Exception ex) { sc.Message = ex.Message; }
             finally { cm.Close(); }
@@ -401,4 +415,27 @@ namespace Clinic
             return sc;
         }
     }
+
+    //public class DoctorContext
+    //{
+    //    OleDbConnection cm = new OleDbConnection(Properties.Settings.Default.cs);
+
+    //    public ServerToClient GetDoctors()
+    //    {
+    //        ServerToClient sc = new ServerToClient();
+    //        OleDbCommand cmd = new OleDbCommand("SELECT UniqueID, ResourceName, Designation, Institution, RegdNo FROM Resources ORDER BY ResourceName", cm);
+    //        OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+    //        DataSet ds = new DataSet();
+    //        da.Fill(ds);
+    //        sc.DT = ds.Tables[0];
+    //        sc.Count = ds.Tables[0].Rows.Count;
+    //        return sc;
+    //    }
+
+    //    public ServerToClient AddDoctor(Doctor d)
+    //    {
+    //        ServerToClient sc = new ServerToClient();
+    //        OleDbCommand cmd = new OleDbCommand("")
+    //    }
+    //}
 }

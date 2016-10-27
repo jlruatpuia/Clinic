@@ -136,5 +136,13 @@ namespace Clinic.Controls
             frmPatientDataUpdate frm = new frmPatientDataUpdate(PID);
             frm.ShowDialog();
         }
+
+        private void luePTN_EditValueChanged(object sender, EventArgs e)
+        {
+            if (luePTN.EditValue != null)
+                btnPTN.Enabled = true;
+            else
+                btnPTN.Enabled = false;
+        }
     }
 }
